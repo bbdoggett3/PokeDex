@@ -25,10 +25,9 @@ class App extends Component {
   render() {
     const mappedCards = this.state.pokemon.map( card => {
       return (
-        <div key ={card.name}>
-        <h1>{card.name}</h1>
-        <img  src={card.imageUrl} alt={`${card.name}'s pokemon card`}/>
-      </div>
+        <div>
+           <img  src={card.imageUrl} alt={`${card.name}'s pokemon card`}/>
+        </div>
       ) 
     })
 
