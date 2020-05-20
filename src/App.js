@@ -40,13 +40,17 @@ class App extends Component {
   }
 
   render() {
-    const { pokemon } = this.state
+    const { pokemon, index } = this.state
 
     return(
       <div className ="App">
         <img className ="title" src= "https://img.cinemablend.com/cb/b/1/e/2/4/3/b1e243d63dd84e8f971694725b5ba0163629e8322092e008fc646736f5d25479.jpg" alt = "pokemon logo"/>
         <div className ="card-container">
-          <img className ="card" src={pokemon[0].imageUrl} alt ={`${pokemon[0].name} pokemon card`}/>
+          {
+            pokemon[index] ? (
+              <img className ="card" src={pokemon[index].imageUrl} alt ={`${pokemon[index].name} pokemon card`}/>
+            ) : null
+          }
         </div>
         <div className ="footer-buttons">
           <button className ="prev-next-buttons" onClick={this.buttonPrev}>{"<"}</button>
